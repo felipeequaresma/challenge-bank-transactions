@@ -1,21 +1,25 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  user: postgres
-  password: docker
-  host: localhost
   pool: 5
 
 development:
   <<: *default
+  user: postgres
+  password: docker
+  host: localhost
   database: bank_development
 
 test:
   <<: *default
+  user: postgres
+  password: docker
+  host: localhost
   database: bank_test
 
 production:
   <<: *default
-  database: bank_production
-  username: <%= ENV[''] %>
-  password: <%= ENV[''] %>
+  host: postgres://edytxjhbmatqfo:ab3b0c3080eb99a4486c7f09e96df3fad53fee8be71338b0f136262e730a7bfa@ec2-3-218-171-44.compute-1.amazonaws.com:5432/d71gqj42bkur5n
+  database: d71gqj42bkur5n
+  username: edytxjhbmatqfo
+  password: ab3b0c3080eb99a4486c7f09e96df3fad53fee8be71338b0f136262e730a7bfa
