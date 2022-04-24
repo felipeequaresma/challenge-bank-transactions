@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'discard', '~> 1.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'coffee-rails', '~> 5.0'
+gem 'serviceworker-rails'
 
 group :development, :test do
   gem 'pry', '~> 0.13.1'
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop-rails', require: false
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'dotenv-rails'
 end
 
 group :test do

@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-4 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Criar nova conta</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+       <%= link_to 'Escolher', new_user_registration_path, class: 'link btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+
+  <% if @current_system_user %>
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Realizar Transferências</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <%= link_to 'Escolher', accounts_new_transfer_path, class: 'link btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Realizar Saque</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <%= link_to 'Escolher', accounts_new_withdrawal_path, class: 'link btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Realizar Deposito</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <%= link_to 'Escolher', accounts_new_deposit_path, class: 'link btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Solicitar Saldo</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <%= link_to 'Escolher', accounts_show_deposit_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

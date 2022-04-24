@@ -2,11 +2,11 @@
 A aplicação trata as movimentações que um cliente pode fazer ao chegar no caixa de um banco.
 
 O cliente pode fazer:
-    • Cadastrar, Editar e Encerrar sua Conta
-    • Realizar Depósitos
-    • Realizar Saques
+    • Cadastrar, Editar e Encerrar sua Conta [x]
+    • Realizar Depósitos [x]
+    • Realizar Saques [x]
     • Realizar Transferências entre Contas [x]
-    • Solicitar Saldo
+    • Solicitar Saldo [x]
     • Solicitar Extrato Filtrando por Data Início e Final
 Regras:
     • Uma conta não pode ser excluída []
