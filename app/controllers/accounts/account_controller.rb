@@ -11,9 +11,12 @@ module Accounts
     end
 
     def destroy
-      @account.discard
-    end
+      Account.find(params[:id]).discard
 
-    private 
+      cookies.delete :cpf
+      session.clear
+      
+      redirect_to accounts_account_index_path
+    end
   end
 end

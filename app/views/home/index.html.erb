@@ -59,5 +59,17 @@
         </div>
       </div>
     </div>
+    <% unless @current_system_user.account.nil? %>
+      <div class="col-4 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Solicitar Saldo</h5>
+            <p class="card-text">Aqui você consegue conferir o saldo da conta de forma simples e objetiva.</p>
+            
+            <%= link_to 'Delete', accounts_account_path(@current_system_user.account.id), :method => :delete, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
