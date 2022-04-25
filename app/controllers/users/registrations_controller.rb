@@ -11,11 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up(resource_name, resource)
-    true
-  end
-
-  def after_sign_in_path_for(resource)
     _stored_cpf_in_cookie(resource)
+    
+    true
   end
 
   private
