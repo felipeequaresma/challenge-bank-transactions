@@ -9,6 +9,16 @@
     </div>
   </div>
 
+  <div class="col-4 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Todas as contas</h5>
+        <p class="card-text">Aqui você pode encontrar as informações de todas as contas criadas no sistema.</p>
+        <%= link_to 'Escolher', accounts_account_index_path, class: 'link btn btn-dark' %>
+      </div>
+    </div>
+  </div>
+
   <% if @current_system_user %>
     <div class="col-4 mt-3">
       <div class="card">
@@ -16,16 +26,6 @@
           <h5 class="card-title">Realizar Transferências</h5>
           <p class="card-text">Realize suas transferências de forma fácil e rápida, apenas informando o valor e CPF do destinatário.</p>
           <%= link_to 'Escolher', accounts_new_transfer_path, class: 'link btn btn-primary' %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4 mt-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Todas as contas</h5>
-          <p class="card-text">Aqui você pode encontrar as informações de todas as contas criadas no sistema.</p>
-          <%= link_to 'Escolher', accounts_account_index_path, class: 'link btn btn-dark' %>
         </div>
       </div>
     </div>
