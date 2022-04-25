@@ -7,10 +7,14 @@ module Accounts
     def update
       begin
         Accounts::Deposit.call(current_system_user.account, _params[:balance])
- 
-        redirect_to accounts_new_deposit_path, notice: "deu tudo certo!"
+        
+        flash[:success] = "Deposito realizado com sucesso!"
+        
+        redirect_to accounts_new_deposit_path
       rescue => exception
-        redirect_to accounts_new_deposit_path, notice: exception.message
+        flash[:danger] = exception.message
+  
+        redirect_to accounts_new_deposit_path 
       end
     end
 

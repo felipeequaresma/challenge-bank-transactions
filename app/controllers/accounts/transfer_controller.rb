@@ -10,9 +10,13 @@ module Accounts
       begin
         Accounts::Transfer.call(_params)
 
-        redirect_to root_path, notice: "deu tudo certo!" if sign_out(current_user)
+        flash[:success] = "Saque realizado com sucesso!"
+
+        redirect_to root_path if sign_out(current_user)
       rescue => exception
-        redirect_to accounts_new_transfer_path, notice: exception.message
+        flash[:danger] = exception.message
+
+        redirect_to accounts_new_transfer_path
       end
     end
 

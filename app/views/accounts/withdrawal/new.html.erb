@@ -1,5 +1,8 @@
 <div class="card col-md-6 offset-md-3">
   <div class="card-body my-5">
+    <% flash.each do |name, message| %>
+      <%= content_tag :div, message, class: "alert alert-#{name} col-md-6 offset-md-3" %>
+    <% end %>
     <%= form_with model: @account, url: accounts_update_withdrawal_path, method: :put do |f| %>
       <div class="m-auto">
         <div class="mb-3 row">

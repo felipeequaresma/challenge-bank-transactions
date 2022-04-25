@@ -9,10 +9,14 @@ module Accounts
     def update
       begin
         Accounts::Withdrawal.call(current_user.account, _params[:balance])
+        
+        flash[:success] = "Saque realizado com sucesso!"
 
-        redirect_to root_path, notice: "deu tudo certo!" if sign_out(current_user) 
+        redirect_to root_path if sign_out(current_user)
       rescue => exception
-        redirect_to accounts_new_withdrawal_path, notice: exception.message
+        flash[:danger] = exception.message
+
+        redirect_to accounts_new_withdrawal_path
       end
     end
 
