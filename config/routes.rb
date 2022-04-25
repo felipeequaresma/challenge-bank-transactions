@@ -13,18 +13,25 @@ Rails.application.routes.draw do
     }
 
   namespace :accounts do
+    resources :account, only: [:index, :destroy] do 
+      get 'switch/:cpf', on: :collection, to: "account#switch", as: :switch
+    end
+
     scope :transfer do
       get 'new', to: 'transfer#new', as: :new_transfer
       put 'update', to: 'transfer#update', as: :update_transfer
     end
+
     scope :withdrawal do 
       get 'new', to: 'withdrawal#new', as: :new_withdrawal
       put 'update', to: 'withdrawal#update', as: :update_withdrawal
     end
+
     scope :deposit do 
       get 'new', to: 'deposit#new', as: :new_deposit
       put 'update', to: 'deposit#update', as: :update_deposit
     end
+    
     scope :balance do 
       get 'show', to: 'balance#show', as: :show_deposit
     end

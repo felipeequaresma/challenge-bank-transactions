@@ -1,0 +1,13 @@
+<% @accounts.each do |account| %>
+  <div class="col-4 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">CPF: <%= account.user.cpf %></h5>
+        <p class="card-text">Saldo: <%= account.balance %></p>
+
+        <p class="text-muted fs-6">Obs: Ao escolher essa conta, você passará a ver todas as informações da conta que escolheu. </p>
+        <%= link_to 'Entrar conta', switch_accounts_account_index_path(account.user.cpf), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>

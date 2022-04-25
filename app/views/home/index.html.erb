@@ -23,6 +23,16 @@
     <div class="col-4 mt-3">
       <div class="card">
         <div class="card-body">
+          <h5 class="card-title">Todas as contas</h5>
+          <p class="card-text">Aqui você pode encontrar as informações de todas as contas criadas no sistema.</p>
+          <%= link_to 'Escolher', accounts_account_index_path, class: 'link btn btn-dark' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-body">
           <h5 class="card-title">Realizar Saque</h5>
           <p class="card-text">Realize seus saques de forma rápida, após se realizar uma simples autenticação.</p>
           <%= link_to 'Escolher', accounts_new_withdrawal_path, class: 'link btn btn-primary' %>
@@ -34,7 +44,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Realizar Deposito</h5>
-          <p class="card-text">Realize seus deposito de forma rápida apenas informando o valor que deseja depositar.</p>
+          <p class="card-text">Realize seus deposito de forma rápida apenas informando o valor que deseja</p>
           <%= link_to 'Escolher', accounts_new_deposit_path, class: 'link btn btn-primary' %>
         </div>
       </div>
