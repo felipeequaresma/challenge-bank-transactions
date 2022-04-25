@@ -3,7 +3,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     ActiveRecord::Base.transaction do
       super do |resource|
         resource.build_account
-        resource.save!
+        
+        _stored_cpf_in_cookie(resource) if resource.save!
       end
     end
   end
@@ -11,8 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up(resource_name, resource)
-    _stored_cpf_in_cookie(resource)
-    
     true
   end
 
