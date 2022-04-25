@@ -9,7 +9,7 @@ module Accounts
     def update
       begin
         Accounts::Transfer.call(_params)
- 
+
         redirect_to root_path, notice: "deu tudo certo!" if sign_out(current_user)
       rescue => exception
         redirect_to accounts_new_transfer_path, notice: exception.message
