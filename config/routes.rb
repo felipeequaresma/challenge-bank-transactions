@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     }
 
   namespace :accounts do
-    resources :account, only: [:index, :destroy] do 
+    resources :excerpt, only: :index
+
+    resources :account, only: [:index, :destroy] do
       get 'switch/:cpf', on: :collection, to: "account#switch", as: :switch
     end
 

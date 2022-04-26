@@ -2,6 +2,8 @@ module Accounts
   class TransferController < ApplicationController
     before_action :authenticate_user!
 
+    after_action -> { send_notify('transfer', _notify_params) }, only: :update
+
     def new
       @account = Account.new
     end
@@ -24,6 +26,14 @@ module Accounts
 
     def _params
       params.required(:account).permit(:balance, :cpf).merge(user: current_user)
+    end
+
+    def _notify_params
+      {
+        account: current_system_user&.account,
+        balance: _params[:balance],
+        type_transaction: 'deposit'
+      }
     end
   end
 end

@@ -1,6 +1,8 @@
 module Accounts
   class WithdrawalController < ApplicationController
     before_action :authenticate_user!
+    
+    after_action -> { send_notify('withdrawal', _notify_params) }, only: :update
 
     def new
       @account = Account.new
@@ -24,6 +26,14 @@ module Accounts
 
     def _params
       params.required(:account).permit(:balance)
+    end
+
+    def _notify_params
+      {
+        account: current_system_user&.account,
+        balance: _params[:balance],
+        type_transaction: 'deposit'
+      }
     end
   end
 end

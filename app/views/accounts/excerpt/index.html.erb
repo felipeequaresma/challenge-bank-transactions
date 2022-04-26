@@ -1,0 +1,36 @@
+<div class="">
+  <%= form_tag accounts_excerpt_index_path, method: :get do |f| %>
+    <div class="m-auto">
+      <div class="mb-3 row">
+        <div class="col-md-5">
+          <%= date_field_tag :start_at, nil,autofocus: true, autocomplete: "off", required: true, class: "form-control" %>
+        </div>
+        <div class="col-md-5">
+          <%= date_field_tag :end_at, nil,autofocus: true, autocomplete: "off", required: true, class: "form-control" %>
+        </div>
+
+         <%= submit_tag "Buscar", class: "col-md-2 btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Valor</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @excerpt.each do |excerpt|%>
+      <tr>
+        <td>R$ <%= excerpt.balance%></td>
+        <td><%= excerpt.type_transaction%></td>
+        <td><%= excerpt.created_at%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

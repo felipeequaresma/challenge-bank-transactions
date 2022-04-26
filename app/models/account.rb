@@ -4,4 +4,5 @@ class Account < ApplicationRecord
   default_scope -> { kept }
   
   has_one :user
+  has_many :excerpt
 end
