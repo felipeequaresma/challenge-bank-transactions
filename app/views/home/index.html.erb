@@ -54,7 +54,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Solicitar Extrato</h5>
-          <p class="card-text">Realize seus deposito de forma rápida apenas informando o valor que deseja</p>
+          <p class="card-text">Aqui você pode solicitar o seu Extrato, podendo filtrar e assim ter um melhor controle financeiro.</p>
           <%= link_to 'Escolher', accounts_excerpt_index_path, class: 'link btn btn-primary' %>
         </div>
       </div>
@@ -73,8 +73,8 @@
       <div class="col-4 mt-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Solicitar Saldo</h5>
-            <p class="card-text">Aqui você consegue conferir o saldo da conta de forma simples e objetiva.</p>
+            <h5 class="card-title">Encerrar sua Conta</h5>
+            <p class="card-text">Aqui você pode encerrar sua conta de forma rápida apenas, com apenas 1 click</p>
             
             <%= link_to 'Delete', accounts_account_path(@current_system_user.account.id), :method => :delete, class: 'btn btn-danger' %>
           </div>

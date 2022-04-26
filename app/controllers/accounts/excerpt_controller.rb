@@ -9,7 +9,7 @@ module Accounts
     private
 
     def _excerpt_by_date!
-      Excerpt.search_by_range_date({start_at: params[:start_at], end_at: params[:end_at]}) 
+      current_system_user&.account&.excerpt&.search_by_range_date({start_at: params[:start_at], end_at: params[:end_at]}) unless params[:start_at].nil? || params[:end_at].nil?
     end
   end
 end
